@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestros 2 Meses Juntos ❤️ - Scrapbook Especial</title>
+  
+  <!-- Fuentes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Iconos FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-paper: #f7f0e3;
+      --paper-card: #fffdf9;
+      --red-passion: #d32f2f;
+      --rose-accent: #e91e63;
+      --pink-soft: #ff80ab;
+      --wine-dark: #5c1d24;
+      --warm-cream: #ffe0b2;
+      --text-dark: #3e2723;
+      --washi-pink: rgba(255, 128, 171, 0.75);
+      --washi-red: rgba(229, 115, 115, 0.75);
+      --shadow-soft: 0 10px 25px rgba(62, 39, 35, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-paper);
+      background-image: 
+        radial-gradient(#e2d5c3 1.5px, transparent 1.5px),
+        radial-gradient(#e2d5c3 1.5px, var(--bg-paper) 1.5px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      font-family: 'Patrick Hand', cursive;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      padding-bottom: 60px;
+      position: relative;
+    }
+
+    /* FONDO DE CORAZONES TRANSPARENTES FLOTANTES */
+    .bg-hearts-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .bg-heart {
+      position: absolute;
+      bottom: -60px;
+      color: rgba(233, 30, 99, 0.22);
+      user-select: none;
+      animation: floatBgHeart 9s linear infinite;
+    }
+
+    @keyframes floatBgHeart {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.35;
+      }
+      85% {
+        opacity: 0.35;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .scrapbook-header-banner {
+      width: 100%;
+      height: 16px;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--red-passion),
+        var(--red-passion) 15px,
+        #ffffff 15px,
+        #ffffff 30px,
+        var(--rose-accent) 30px,
+        var(--rose-accent) 45px
+      );
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ENCABEZADO */
+    header {
+      text-align: center;
+      margin: 35px 0 25px 0;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 3.8rem;
+      color: var(--red-passion);
+      text-shadow: 2px 2px 0px var(--warm-cream);
+      line-height: 1.1;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      color: var(--rose-accent);
+      margin-top: 5px;
+    }
+
+    /* WASHI TAPE */
+    .washi-tape {
+      position: absolute;
+      width: 110px;
+      height: 28px;
+      background-color: var(--washi-pink);
+      border-left: 2px dashed rgba(255,255,255,0.7);
+      border-right: 2px dashed rgba(255,255,255,0.7);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    .tape-top-left { top: -12px; left: -15px; transform: rotate(-8deg); }
+    .tape-top-right { top: -12px; right: -15px; transform: rotate(6deg); background-color: var(--washi-red); }
+
+    /* STICKERS */
+    .sticker-img {
+      position: absolute;
+      z-index: 20;
+      filter: drop-shadow(3px 5px 6px rgba(0,0,0,0.18));
+      transition: transform 0.3s ease;
+      user-select: none;
+    }
+
+    .sticker-img:hover {
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    .sticker-snoopy { width: 130px; bottom: -35px; right: -25px; transform: rotate(8deg); }
+    .sticker-heart3d { width: 65px; top: -20px; left: 15px; transform: rotate(-15deg); }
+    .sticker-bunnies { width: 110px; top: -45px; left: -15px; transform: rotate(-10deg); }
+    .sticker-puzzle { width: 125px; top: -25px; right: 10px; transform: rotate(6deg); }
+
+    /* CONTADOR EN TIEMPO REAL */
+    .timer-section {
+      margin: 20px 0 50px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .timer-card {
+      background: var(--paper-card);
+      border: 2px dashed var(--rose-accent);
+      border-radius: 16px;
+      padding: 20px 25px;
+      width: 100%;
+      max-width: 580px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      position: relative;
+    }
+
+    .timer-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: var(--wine-dark);
+      margin-bottom: 10px;
+    }
+
+    .timer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .timer-box {
+      background: #fff8f0;
+      border: 1px solid #f0d0c0;
+      border-radius: 10px;
+      padding: 10px 5px;
+    }
+
+    .timer-number {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: var(--red-passion);
+      line-height: 1;
+    }
+
+    .timer-label {
+      font-size: 1rem;
+      color: #757575;
+      margin-top: 4px;
+    }
+
+    /* REPRODUCTOR VINILO */
+    .music-section {
+      background: #e74141;
+      border: 2px solid #f0e6db;
+      border-radius: 18px;
+      padding: 35px 20px 25px 20px;
+      margin: 50px 0;
+      position: relative;
+      box-shadow: var(--shadow-soft);
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 29px, #f0e4d8 30px);
+    }
+
+    .music-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .music-header h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.7rem;
+      color: var(--wine-dark);
+    }
+
+    .player-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 450px;
+      margin: 0 auto;
+      background: var(--paper-card);
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px solid #f0e0d0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .vinyl-wrapper {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vinyl-disc {
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      background: radial-gradient(circle, #333 18%, #111 20%, #111 35%, #222 36%, #111 48%, #222 49%, #111 65%, #151515 100%);
+      border-radius: 50%;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spinVinyl 4s linear infinite;
+      animation-play-state: paused;
+    }
+
+    .vinyl-label {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=300&auto=format&fit=crop') center/cover;
+      border: 4px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vinyl-center-hole {
+      width: 14px;
+      height: 14px;
+      background-color: var(--paper-card);
+      border-radius: 50%;
+      border: 2px solid #000;
+    }
+
+    @keyframes spinVinyl {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .vinyl-disc.playing {
+      animation-play-state: running;
+    }
+
+    .song-info {
+      text-align: center;
+      width: 100%;
+    }
+
+    .song-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+    }
+
+    .song-artist {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #757575;
+      margin-top: 3px;
+    }
+
+    .audio-controls {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .progress-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .time-stamp {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      color: #888;
+      width: 35px;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 6px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--rose-accent), var(--red-passion));
+      border-radius: 10px;
+    }
+
+    .play-btn {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: var(--red-passion);
+      color: white;
+      border: none;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(198, 40, 40, 0.35);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.08);
+      background: var(--rose-accent);
+    }
+
+    /* CARTA Y SOBRE */
+    .letter-section {
+      position: relative;
+      margin: 50px 0 30px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .envelope-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 580px;
+      background: #f1ded0;
+      border: 3px solid #d7ccc8;
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      padding: 25px;
+      background-image: linear-gradient(135deg, #f5ebe0 25%, #e8d8c8 100%);
+    }
+
+    .seal-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px auto;
+      background: var(--red-passion);
+      color: white;
+      border: 3px dashed #ffcdd2;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 1.6rem;
+      font-family: 'Caveat', cursive;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .seal-btn:hover {
+      transform: scale(1.05) rotate(-2deg);
+      background: var(--rose-accent);
+    }
+
+    .letter-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+      opacity: 0;
+      background: var(--paper-card);
+      border: 2px dashed var(--pink-soft);
+      border-radius: 8px;
+      padding: 0 25px;
+      position: relative;
+    }
+
+    .envelope-wrapper.open .letter-content {
+      max-height: 2000px;
+      opacity: 1;
+      padding: 30px 25px;
+      margin-top: 20px;
+    }
+
+    .letter-text {
+      font-size: 1.45rem;
+      line-height: 1.6;
+      color: #2c1810;
+      white-space: pre-line;
+    }
+
+    .letter-text h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.6rem;
+      color: var(--red-passion);
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    /* GALERÍA POLAROID */
+    .gallery-section {
+      margin: 60px 0 30px 0;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 3.2rem;
+      color: var(--red-passion);
+      margin-bottom: 35px;
+    }
+
+    .polaroid-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      padding: 10px;
+    }
+
+    .polaroid {
+      background: white;
+      padding: 15px 15px 25px 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .polaroid:nth-child(1) { transform: rotate(-3deg); }
+    .polaroid:nth-child(2) { transform: rotate(2deg); }
+    .polaroid:nth-child(3) { transform: rotate(-2deg); }
+    .polaroid:nth-child(4) { transform: rotate(3deg); }
+    .polaroid:nth-child(5) { transform: rotate(-1deg); }
+    .polaroid:nth-child(6) { transform: rotate(2deg); }
+
+    .polaroid:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+      z-index: 5;
+    }
+
+    .polaroid-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid #eee;
+    }
+
+    .polaroid-caption {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 12px;
+    }
+
+    .pin {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 18px;
+      background: var(--red-passion);
+      border-radius: 50%;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+      z-index: 12;
+    }
+
+    /* FRASCO DE LOS DESEOS */
+    .jar-section {
+      margin: 30px 0 60px 0;
+      text-align: center;
+    }
+
+    .jar-card {
+      background: #fffdf8;
+      border: 2px dashed #e0c0a0;
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .jar-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 4.5rem;
+      transition: transform 0.2s ease;
+      display: inline-block;
+      user-select: none;
+    }
+
+    .jar-btn:hover { transform: scale(1.1) rotate(-5deg); }
+    .jar-btn:active { transform: scale(0.95); }
+
+    .wish-display {
+      min-height: 70px;
+      margin-top: 15px;
+      padding: 12px 18px;
+      background: #fff9c4;
+      border-radius: 12px;
+      border-bottom-right-radius: 20px 4px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      font-size: 1.35rem;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    /* MEMORAMA DE 8 CARTAS */
+    .memory-section {
+      margin: 60px 0;
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 600px;
+      margin: 20px auto 0 auto;
+      perspective: 1000px;
+    }
+
+    .memory-card {
+      height: 160px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    .memory-card.flip {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      border: 3px solid white;
+      overflow: hidden;
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #ff80ab, #d32f2f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.2rem;
+    }
+
+    .card-back-container {
+      transform: rotateY(180deg);
+      background-color: #fff;
+    }
+
+    .card-back-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .memory-win-msg {
+      margin-top: 25px;
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      color: var(--red-passion);
+      display: none;
+      animation: popWin 0.5s ease forwards;
+    }
+
+    @keyframes popWin {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* 6 STICKY NOTES */
+    .reasons-section {
+      margin: 60px 0;
+    }
+
+    .notes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .sticky-note {
+      background: #fff9c4;
+      padding: 22px;
+      width: 100%;
+      max-width: 240px;
+      min-height: 170px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+      position: relative;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom-right-radius: 25px 5px;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .sticky-note:nth-child(1) { background: #ffe0b2; transform: rotate(2deg); }
+    .sticky-note:nth-child(2) { background: #f8bbd0; transform: rotate(-3deg); }
+    .sticky-note:nth-child(3) { background: #ffecb3; transform: rotate(1deg); }
+    .sticky-note:nth-child(4) { background: #f3e5f5; transform: rotate(-2deg); }
+    .sticky-note:nth-child(5) { background: #e1f5fe; transform: rotate(3deg); }
+    .sticky-note:nth-child(6) { background: #ffe0b2; transform: rotate(-1deg); }
+
+    .sticky-note:hover {
+      transform: translateY(-10px) scale(1.03) rotate(0deg) !important;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.18);
+      z-index: 10;
+    }
+
+    /* SECCIÓN MENSAJE SECRETO */
+    .secret-section {
+      margin: 60px 0 40px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .secret-card {
+      background: #fff8f0;
+      border: 3px dashed var(--rose-accent);
+      border-radius: 16px;
+      padding: 25px;
+      width: 100%;
+      max-width: 550px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .secret-card:hover {
+      transform: scale(1.02);
+      border-color: var(--red-passion);
+    }
+
+    .secret-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: var(--red-passion);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .secret-hint {
+      font-size: 1.1rem;
+      color: #888;
+      margin-top: 5px;
+    }
+
+    .secret-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease, opacity 0.5s ease, margin-top 0.4s ease;
+      opacity: 0;
+      font-size: 1.4rem;
+      color: var(--wine-dark);
+      line-height: 1.5;
+    }
+
+    .secret-card.revealed .secret-content {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 18px;
+      padding-top: 15px;
+      border-top: 1px dashed var(--pink-soft);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    footer h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 3.2rem;
+      color: var(--red-passion);
+      margin-bottom: 10px;
+    }
+
+    .heart-btn {
+      background: none;
+      border: none;
+      font-size: 3.8rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+    }
+
+    .heart-btn:active { transform: scale(0.85); }
+
+    .floating-heart {
+      position: fixed;
+      pointer-events: none;
+      font-size: 1.8rem;
+      color: var(--red-passion);
+      animation: floatUp 2.5s ease-out forwards;
+      z-index: 999;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(0.8); }
+      100% { opacity: 0; transform: translateY(-140px) scale(1.4); }
+    }
+
+    /* ESTILOS PARA MÓVILES */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.7rem; }
+      .memory-grid { grid-template-columns: repeat(2, 1fr); }
+      .memory-card { height: 140px; }
+      .sticker-snoopy { width: 95px; bottom: -20px; right: -10px; }
+      .sticker-bunnies { width: 85px; top: -35px; }
+      .sticker-puzzle { width: 95px; }
+
+      /* AJUSTE POLAROIDS PARA TELÉFONOS */
+      .polaroid-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .polaroid, 
+      .polaroid:nth-child(n) {
+        transform: none !important;
+        max-width: 260px;
+        width: 100%;
+      }
+
+      .polaroid:hover {
+        transform: none !important;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.12) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CONTENEDOR DE CORAZONES FLOTANTES EN EL FONDO -->
+  <div class="bg-hearts-container" id="bgHeartsContainer"></div>
+
+  <div class="scrapbook-header-banner"></div>
+
+  <div class="container">
+
+    <!-- ENCABEZADO -->
+    <header>
+      <h1>Feliz 2 Meses, Mi Amor </h1>
+      <p>Espero que te guste mucho este regalito.</p>
+    </header>
+
+    <!-- 1. CONTADOR EN TIEMPO REAL (RELOJ) -->
+    <section class="timer-section">
+      <div class="timer-card">
+        <div class="washi-tape tape-top-left" style="width:80px; height:20px;"></div>
+        <div class="timer-title">Llevamos juntos: ⏳</div>
+        <div class="timer-grid">
+          <div class="timer-box">
+            <div class="timer-number" id="t-days">0</div>
+            <div class="timer-label">Días</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-number" id="t-hours">0</div>
+            <div class="timer-label">Horas</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-number" id="t-minutes">0</div>
+            <div class="timer-label">Minutos</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-number" id="t-seconds">0</div>
+            <div class="timer-label">Segundos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. REPRODUCTOR VINILO -->
+    <section class="music-section">
+      <div class="washi-tape tape-top-left" style="background-color: var(--washi-red);"></div>
+      
+      <img src="image-Photoroom (5).png" alt="Conejitos Sticker" class="sticker-img sticker-bunnies">
+
+      <div class="music-header">
+        <h3>Te dedico esta canción, lindo 🎶</h3>
+      </div>
+
+      <div class="player-container">
+        <div class="vinyl-wrapper">
+          <div class="vinyl-disc" id="vinylDisc">
+            <div class="vinyl-label">
+              <div class="vinyl-center-hole"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="song-info">
+          <div class="song-title">Amor Completo</div>
+          <div class="song-artist">Mon Laferte</div>
+        </div>
+
+        <audio id="audioTrack" src="310. Mon Laferte - Amor Completo (Audio).mp3" preload="metadata"></audio>
+
+        <div class="audio-controls">
+          <div class="progress-container">
+            <span class="time-stamp" id="currentTime">0:00</span>
+            <div class="progress-bar" id="progressBar" onclick="seekAudio(event)">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="time-stamp" id="duration">0:00</span>
+          </div>
+
+          <button class="play-btn" id="playBtn" onclick="togglePlay()">
+            <i class="fa-solid fa-play" id="playIcon"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CARTA INTERACTIVA -->
+    <section class="letter-section">
+      <div class="envelope-wrapper" id="envelope">
+        <div class="washi-tape tape-top-left"></div>
+        <div class="washi-tape tape-top-right"></div>
+        
+        <img src="image-Photoroom (4).png" alt="Corazón 3D" class="sticker-img sticker-heart3d">
+
+        <button class="seal-btn" id="openBtn" onclick="toggleLetter()">
+          Abrir Carta <i class="fa-solid fa-envelope-open-text" style="margin-left: 10px;"></i>
+        </button>
+
+        <div class="letter-content" id="letterContent">
+          <div class="letter-text">
+            <h2>Mi amor,</h2>
+             Ya han pasado 2 meses desde que estamos juntos y estoy siendo demasiado feliz con vos Andrés, no puedo explicar lo mucho que me encanta nuestra relación,
+             siento que vivimos en nuestro propio mundo y que solo importamos nosotros.
+
+             Con vos siento paz, alegría, pasión, y sobre todo mucho amor; no somos perfectos pero estamos aprendiendo a llevar todo de una manera muy bonita y eso me hace feliz.
+             
+             Vos me impulsas a querer ser mejor cada dia, me inspiras, me motivas, sacas la mejor versión de mi.
+             Con vos lo deseo todo, deseo hacer muchas cosas acompañada de mi persona favorita, mi persona especial y única.
+             
+             Lo que siento por vos es algo mágico, algo único e irreal. De verdad que siempre que te veo me pierdo en vos, me estoy enamorando aun más.
+
+             Quiero seguir aprendiendo a amarte cada dia, quiero seguir conociendo cada parte de vos, tu alma, tu corazón, tu mente, tu ser.
+
+             Realmente sos una persona tan hermosa y me encanta todo de vos, me encanta ser tu novia y siempre voy a estar para vos cuando lo necesites.
+
+             En los días mas difíciles, si necesitas hablar, si necesitas un abrazo, si necesitas un beso, yo voy a estar aquí.
+
+             Te amo con todo mi corazón 💘
+          </div>
+        </div>
+
+        <img src="image-Photoroom (3).png" alt="Snoopy Sticker" class="sticker-img sticker-snoopy">
+      </div>
+    </section>
+
+    <!-- 4. GALERÍA POLAROID -->
+    <section class="gallery-section">
+      <img src="image-Photoroom (6).png" alt="Puzzle Me and You" class="sticker-img sticker-puzzle">
+
+      <h2 class="section-title">Momentos lindos juntos 📸</h2>
+      
+      <div class="polaroid-grid">
+        <div class="polaroid">
+          <div class="pin"></div>
+          <div class="washi-tape tape-top-left" style="width:70px; height:20px;"></div>
+          <img src="primeracita.jpeg" alt="Recuerdo 1" class="polaroid-img">
+          <div class="polaroid-caption">Nuestra primera cita ✨</div>
+        </div>
+
+        <div class="polaroid">
+          <div class="pin"></div>
+          <img src="dia1.jpeg" alt="Recuerdo 2" class="polaroid-img">
+          <div class="polaroid-caption">El dia que me pediste ser tu novia 💖</div>
+        </div>
+
+        <div class="polaroid">
+          <div class="pin"></div>
+          <div class="washi-tape tape-top-right" style="width:70px; height:20px;"></div>
+          <img src="tucarita.jpeg" alt="Recuerdo 3" class="polaroid-img">
+          <div class="polaroid-caption">Adoro tu carita 😍</div>
+        </div>
+
+        <div class="polaroid">
+          <div class="pin"></div>
+          <img src="citas.jpeg" alt="Recuerdo 4" class="polaroid-img">
+          <div class="polaroid-caption">Amo nuestras citas 💫</div>
+        </div>
+
+        <div class="polaroid">
+          <div class="pin"></div>
+          <div class="washi-tape tape-top-left" style="width:70px; height:20px;"></div>
+          <img src="miradas.jpeg" alt="Recuerdo 5" class="polaroid-img">
+          <div class="polaroid-caption">Me encanta como me miran esos ojitos ❤️</div>
+        </div>
+
+        <div class="polaroid">
+          <div class="pin"></div>
+          <img src="twins.jpeg" alt="Recuerdo 6" class="polaroid-img">
+          <div class="polaroid-caption">De twins 📸</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FRASCO DE LOS DESEOS -->
+    <section class="jar-section">
+      <div class="jar-card">
+        <div class="washi-tape tape-top-right" style="width:80px; height:20px;"></div>
+        <h3 style="font-family:'Caveat', cursive; font-size: 2.3rem; color: var(--wine-dark);">El Frasco de los Deseos ✨</h3>
+        <p style="color: #777; font-size: 1.1rem;">Toca el frasco para sacar un deseo para nosotros</p>
+        
+        <button class="jar-btn" onclick="popWish(event)">🫙</button>
+        
+        <div class="wish-display" id="wishDisplay">
+          ¡Haz clic en el frasco para ver qué sale! ✨
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. MEMORAMA DE 8 CARTAS -->
+    <section class="memory-section">
+      <h2 class="section-title">Juego de Memoria: Nosotros 🧩</h2>
+      <p style="text-align: center; font-size: 1.2rem; color: #666;">Encuentra los 4 pares de fotos</p>
+      
+      <div class="memory-grid" id="memoryGrid"></div>
+      <div class="memory-win-msg" id="memoryWinMsg">¡Ganaste! 🎉 Sos el mejor novio del universo! ❤️</div>
+    </section>
+
+    <!-- 7. 6 COSAS QUE AMO DE NOSOTROS -->
+    <section class="reasons-section">
+      <h2 class="section-title">6 Cosas que AMO de Nosotros 📝</h2>
+      
+      <div class="notes-container">
+        <div class="sticky-note">
+          Nos entendemos, escuchamos y cuidamos el uno al otro.
+        </div>
+        <div class="sticky-note">
+          Nuestras bromas y las risas sin sentido.
+        </div>
+        <div class="sticky-note">
+          La paz tan bonita que siento siempre que estoy a tu lado.
+        </div>
+        <div class="sticky-note">
+          Nos apoyamos y nos damos motivación.
+        </div>
+        <div class="sticky-note">
+          Tratamos de ser mejores personas no solo para el otro, si no para nosotros mismos.
+        </div>
+        <div class="sticky-note">
+          Estamos obsesionados mutuamente.
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. MENSAJE SECRETO -->
+    <section class="secret-section">
+      <div class="secret-card" id="secretCard" onclick="toggleSecretMsg()">
+        <div class="secret-title">
+          <i class="fa-solid fa-lock" id="secretIcon"></i> Mensaje Secreto
+        </div>
+        <div class="secret-hint" id="secretHint">(Haz clic aquí para revelar el secreto)</div>
+        <div class="secret-content">
+          ✨ Sos mi lugar favorito en el mundo. Estos dos meses han sido solo el comienzo de nuestra bonita relación. ¡Gracias por hacerme tan feliz cada día! Te amo infinitamente. ✨
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <h2>Te amo Andrés </h2>
+      <p style="font-size: 1.3rem; margin-bottom: 10px; color: var(--rose-accent);">Toca el corazón para enviar amor</p>
+      <button class="heart-btn" onclick="spawnHearts(event)">❤️</button>
+      <p style="margin-top: 15px; font-size: 1.1rem; color: #777;">Para vos precioso con todo mi amor.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    /* CORAZONES TRANSPARENTES FLOTANDO EN EL FONDO */
+    function createBackgroundHearts() {
+      const container = document.getElementById('bgHeartsContainer');
+      const heartIcons = ['❤️', '💖', '💕', '💗', '💓'];
+      const totalHearts = 22;
+
+      for (let i = 0; i < totalHearts; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('bg-heart');
+        heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+        
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.fontSize = `${1.2 + Math.random() * 1.8}rem`;
+        
+        const duration = 7 + Math.random() * 8;
+        const delay = Math.random() * 10;
+        
+        heart.style.animationDuration = `${duration}s`;
+        heart.style.animationDelay = `${delay}s`;
+
+        container.appendChild(heart);
+      }
+    }
+    createBackgroundHearts();
+
+    /* CARTA */
+    function toggleLetter() {
+      const envelope = document.getElementById('envelope');
+      const sealBtn = document.getElementById('openBtn');
+
+      envelope.classList.toggle('open');
+
+      if (envelope.classList.contains('open')) {
+        sealBtn.innerHTML = 'Carta Abierta <i class="fa-solid fa-heart" style="margin-left:10px;"></i>';
+      } else {
+        sealBtn.innerHTML = 'Abrir Carta <i class="fa-solid fa-envelope-open-text" style="margin-left:10px;"></i>';
+      }
+    }
+
+    /* CONTADOR EN TIEMPO REAL: 12 de Julio de 2026 a las 6:30 PM (18:30) */
+    const startDate = new Date(2026, 6, 12, 18, 30, 0); 
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('t-days').textContent = days;
+        document.getElementById('t-hours').textContent = hours;
+        document.getElementById('t-minutes').textContent = minutes;
+        document.getElementById('t-seconds').textContent = seconds;
+      }
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    /* REPRODUCTOR DE AUDIO */
+    const audio = document.getElementById('audioTrack');
+    const playBtn = document.getElementById('playBtn');
+    const playIcon = document.getElementById('playIcon');
+    const vinylDisc = document.getElementById('vinylDisc');
+    const progressFill = document.getElementById('progressFill');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationEl = document.getElementById('duration');
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play().catch(err => {
+          console.log("Audio play error:", err);
+          alert("Asegúrate de tener la canción en la misma carpeta del archivo HTML.");
+        });
+      } else {
+        audio.pause();
+      }
+    }
+
+    audio.addEventListener('play', () => {
+      playIcon.classList.remove('fa-play');
+      playIcon.classList.add('fa-pause');
+      vinylDisc.classList.add('playing');
+    });
+
+    audio.addEventListener('pause', () => {
+      playIcon.classList.remove('fa-pause');
+      playIcon.classList.add('fa-play');
+      vinylDisc.classList.remove('playing');
+    });
+
+    audio.addEventListener('ended', () => {
+      playIcon.classList.remove('fa-pause');
+      playIcon.classList.add('fa-play');
+      vinylDisc.classList.remove('playing');
+      progressFill.style.width = '0%';
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = `${percent}%`;
+        
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+        durationEl.textContent = formatTime(audio.duration);
+      }
+    });
+
+    function seekAudio(e) {
+      const progressBar = document.getElementById('progressBar');
+      const clickX = e.offsetX;
+      const width = progressBar.clientWidth;
+      if (audio.duration) {
+        audio.currentTime = (clickX / width) * audio.duration;
+      }
+    }
+
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return "0:00";
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    /* FRASCO DE LOS DESEOS */
+    const wishes = [
+      "Que nuestro amor siga creciendo con cada momento compartido 🫂",
+      "Que construyamos recuerdos que duren toda la vida 💫",
+      "Que aprendamos y crezcamos juntos 💞",
+      "Que todas nuestras metas se cumplan ✨",
+      "Que siempre encontremos razones para enamorarnos otra vez 💝",
+      "Que sigamos construyendo confianza y respeto cada día 💌",
+      "Que viajemos y descubramos el mundo de la mano 😘",
+      "Que nunca falte la ternura en nuestras miradas 💘"
+    ];
+
+    let currentWishIndex = 0;
+
+    function popWish(e) {
+      const display = document.getElementById('wishDisplay');
+      let nextMessage = "";
+
+      if (currentWishIndex < wishes.length) {
+        nextMessage = wishes[currentWishIndex];
+        currentWishIndex++;
+      } else {
+        nextMessage = "estos son los lindos deseos para nosotros mi amor ❤️";
+      }
+
+      display.style.opacity = '0';
+      display.style.transform = 'scale(0.9)';
+
+      setTimeout(() => {
+        display.textContent = nextMessage;
+        display.style.opacity = '1';
+        display.style.transform = 'scale(1)';
+      }, 200);
+
+      spawnHearts(e);
+    }
+
+    /* MEMORAMA DE 8 CARTAS */
+    const cardImages = [
+      'image_f83feb.jpeg',
+      'image_f891c4.jpeg',
+      'image_f8916b.jpg',
+      'image_f8956b.jpeg',
+    ];
+
+    let memoryCards = [...cardImages, ...cardImages];
+    let hasFlippedCard = false;
+    let lockBoard = false;
+    let firstCard, secondCard;
+    let matchedPairs = 0;
+
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+
+    function createMemoryGrid() {
+      const grid = document.getElementById('memoryGrid');
+      grid.innerHTML = '';
+      const shuffledCards = shuffle(memoryCards);
+
+      shuffledCards.forEach((imgSrc) => {
+        const card = document.createElement('div');
+        card.classList.add('memory-card');
+        card.dataset.image = imgSrc;
+
+        card.innerHTML = `
+          <div class="card-front"><i class="fa-solid fa-heart"></i></div>
+          <div class="card-back-container">
+            <img class="card-back-img" src="${imgSrc}" alt="Recuerdo Memorama">
+          </div>
+        `;
+
+        card.addEventListener('click', flipMemoryCard);
+        grid.appendChild(card);
+      });
+    }
+
+    function flipMemoryCard() {
+      if (lockBoard || this === firstCard) return;
+
+      this.classList.add('flip');
+
+      if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
+        return;
+      }
+
+      secondCard = this;
+      checkForMatch();
+    }
+
+    function checkForMatch() {
+      let isMatch = firstCard.dataset.image === secondCard.dataset.image;
+      isMatch ? disableCards() : unflipCards();
+    }
+
+    function disableCards() {
+      firstCard.removeEventListener('click', flipMemoryCard);
+      secondCard.removeEventListener('click', flipMemoryCard);
+      matchedPairs++;
+
+      if (matchedPairs === 4) {
+        document.getElementById('memoryWinMsg').style.display = 'block';
+        triggerWinHeartExplosion();
+      }
+
+      resetBoard();
+    }
+
+    function unflipCards() {
+      lockBoard = true;
+      setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+        resetBoard();
+      }, 1000);
+    }
+
+    function resetBoard() {
+      [hasFlippedCard, lockBoard] = [false, false];
+      [firstCard, secondCard] = [null, null];
+    }
+
+    function triggerWinHeartExplosion() {
+      const winMsg = document.getElementById('memoryWinMsg');
+      const rect = winMsg.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+          const offsetX = (Math.random() - 0.5) * window.innerWidth * 0.8;
+          const offsetY = (Math.random() - 0.5) * 100;
+          spawnHeartCustom(centerX + offsetX, centerY + offsetY);
+        }, i * 40);
+      }
+    }
+
+    function spawnHeartCustom(x, y) {
+      const heart = document.createElement('div');
+      heart.classList.add('floating-heart');
+      const heartIcons = ['❤️', '💖', '💕', '✨', '💗', '🥰', '💋'];
+      heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+      
+      heart.style.left = `${x}px`;
+      heart.style.top = `${y}px`;
+      heart.style.fontSize = `${1.5 + Math.random() * 1.5}rem`;
+      
+      document.body.appendChild(heart);
+      
+      setTimeout(() => {
+        heart.remove();
+      }, 2500);
+    }
+
+    createMemoryGrid();
+
+    /* MENSAJE SECRETO */
+    function toggleSecretMsg() {
+      const secretCard = document.getElementById('secretCard');
+      const secretIcon = document.getElementById('secretIcon');
+      const secretHint = document.getElementById('secretHint');
+
+      secretCard.classList.toggle('revealed');
+
+      if (secretCard.classList.contains('revealed')) {
+        secretIcon.className = 'fa-solid fa-lock-open';
+        secretHint.textContent = '(Mensaje revelado ❤️)';
+      } else {
+        secretIcon.className = 'fa-solid fa-lock';
+        secretHint.textContent = '(Haz clic aquí para revelar el secreto)';
+      }
+    }
+
+    /* CORAZONES FLOTANTES DE CLIC */
+    function spawnHearts(e) {
+      for (let i = 0; i < 6; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.innerHTML = '❤️';
+        
+        const x = e.clientX + (Math.random() * 60 - 30);
+        const y = e.clientY + (Math.random() * 20 - 10);
+        
+        heart.style.left = `${x}px`;
+        heart.style.top = `${y}px`;
+        
+        document.body.appendChild(heart);
+        
+        setTimeout(() => {
+          heart.remove();
+        }, 2500);
+      }
+    }
+  </script>
+</body>
+</html>
